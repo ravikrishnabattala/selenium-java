@@ -18,9 +18,9 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-public class TestCases {
+public class TestCasesShould {
 
-    private static final Logger logger = LoggerFactory.getLogger(TestCases.class);
+    private static final Logger logger = LoggerFactory.getLogger(TestCasesShould.class);
     private static WebDriver driver;
 
     @BeforeAll
@@ -39,7 +39,7 @@ public class TestCases {
 //        options.setProxy(proxy);
         options.setScriptTimeout(duration);
         driver = new ChromeDriver(options);
-        driver.getWindowHandle();
+        System.out.println("Window :"+driver.getWindowHandle());
         ((JavascriptExecutor) driver).executeScript("window.open();");
         driver.switchTo().window(new ArrayList<>(driver.getWindowHandles()).get(1));
 //        ((JavascriptExecutor) driver).executeScript("window.open('', '_blank', 'width=800,height=600');");
@@ -85,6 +85,6 @@ public class TestCases {
 
     @AfterAll
     public static void stop() {
-        logger.info("Wenb Driver Removed");
+        logger.info("Web Driver Removed");
     }
 }

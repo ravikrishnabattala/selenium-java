@@ -1,0 +1,27 @@
+2025-02-18 22:00:37 [main] INFO  org.example.TestCasesShould - WebDriver Loaded
+2025-02-18 22:00:42 [main] INFO  org.example.TestCasesShould - error becuase of wait
+2025-02-18 22:00:42 [main] INFO  org.example.TestCasesShould - Facebook – log in or sign up
+2025-02-18 22:00:42 [main] WARN  org.example.TestCasesShould - warn
+2025-02-18 22:00:45 [main] INFO  org.example.TestCasesShould - error becuase of wait
+2025-02-18 22:00:45 [main] ERROR org.example.TestCasesShould - Search box found after wait
+2025-02-18 22:00:45 [main] INFO  org.example.TestCasesShould - Google
+2025-02-18 22:00:45 [main] WARN  org.example.TestCasesShould - warn
+2025-02-18 22:00:46 [main] INFO  org.example.TestCasesShould - Web Driver Removed
+2025-02-18 22:43:27 [main] INFO  org.example.TestCasesShould - WebDriver Loaded
+2025-02-18 22:43:31 [main] INFO  org.example.TestCasesShould - error becuase of wait
+2025-02-18 22:43:31 [main] INFO  org.example.TestCasesShould - Facebook – log in or sign up
+2025-02-18 22:43:31 [main] WARN  org.example.TestCasesShould - warn
+2025-02-18 22:43:35 [main] INFO  org.example.TestCasesShould - error becuase of wait
+2025-02-18 22:43:35 [main] ERROR org.example.TestCasesShould - Search box found after wait
+2025-02-18 22:43:35 [main] INFO  org.example.TestCasesShould - Google
+2025-02-18 22:43:35 [main] WARN  org.example.TestCasesShould - warn
+2025-02-18 22:43:35 [main] INFO  org.example.TestCasesShould - Web Driver Removed
+2025-02-18 22:43:45 [main] INFO  org.example.TestCasesShould - WebDriver Loaded
+2025-02-18 22:43:48 [main] INFO  org.example.TestCasesShould - error becuase of wait
+2025-02-18 22:43:48 [main] INFO  org.example.TestCasesShould - Facebook – log in or sign up
+2025-02-18 22:43:48 [main] WARN  org.example.TestCasesShould - warn
+2025-02-18 22:43:50 [main] INFO  org.example.TestCasesShould - error becuase of wait
+2025-02-18 22:43:50 [main] ERROR org.example.TestCasesShould - Search box found after wait
+2025-02-18 22:43:50 [main] INFO  org.example.TestCasesShould - Google
+2025-02-18 22:43:50 [main] WARN  org.example.TestCasesShould - warn
+2025-02-18 22:43:51 [main] INFO  org.example.TestCasesShould - Web Driver Removed

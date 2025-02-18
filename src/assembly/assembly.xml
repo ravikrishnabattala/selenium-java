@@ -1,0 +1,49 @@
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.2.1"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.2.1 http://maven.apache.org/xsd/assembly-2.2.1.xsd">
+    <id>jar-with-tests</id>
+    <formats>
+        <format>jar</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <fileSets>
+        <!-- Include main compiled classes -->
+        <fileSet>
+            <directory>${project.build.outputDirectory}</directory>
+            <outputDirectory>/</outputDirectory>
+        </fileSet>
+
+        <!-- Include test compiled classes -->
+        <fileSet>
+            <directory>${project.build.testOutputDirectory}</directory>
+            <outputDirectory>/</outputDirectory>
+        </fileSet>
+
+        <!-- Include test resources -->
+        <fileSet>
+            <directory>src/test/resources</directory>
+            <outputDirectory>/</outputDirectory>
+            <includes>
+                <include>**/*</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+
+    <dependencySets>
+        <dependencySet>
+            <outputDirectory>/</outputDirectory>
+            <scope>test</scope>
+            <useProjectArtifact>true</useProjectArtifact>
+            <unpack>true</unpack> <!-- Unpack dependencies into the JAR -->
+        </dependencySet>
+    </dependencySets>
+
+
+    <files>
+        <!-- Ensure MANIFEST.MF is included -->
+        <file>
+            <source>src/test/resources/META-INF/MANIFEST.MF</source>
+            <outputDirectory>META-INF</outputDirectory>
+        </file>
+    </files>
+</assembly>
