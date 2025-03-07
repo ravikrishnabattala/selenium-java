@@ -1,0 +1,131 @@
+package org.example;
+
+import com.microsoft.playwright.*;
+import org.junit.jupiter.api.*;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.PageLoadStrategy;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
+
+import java.nio.file.Paths;
+import java.time.Duration;
+import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+
+public class Hooks {
+
+    private static Playwright playwright;
+    private static Browser browser;
+    private static BrowserContext context;
+    private static Page page;
+    private static WebDriver driver;
+    private static final Logger logger = LoggerFactory.getLogger(Hooks.class);
+
+    @BeforeAll
+    public static void initiateBrowsers() {
+
+        logger.info("Initializing Playwright...");
+        try {
+            Map headers = new HashMap();
+            headers.put("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36");
+            headers.put("Accept-Language", "en-US,en;q=0.9");
+            BrowserType.LaunchOptions launchOptions = new BrowserType.LaunchOptions();
+            launchOptions.setHeadless(false);
+            launchOptions.setSlowMo(100);
+            Browser.NewContextOptions contextOptions = new Browser.NewContextOptions();
+            contextOptions.setExtraHTTPHeaders(headers);
+
+            playwright = Playwright.create();
+            browser = playwright.chromium().launch(launchOptions);
+            context = browser.newContext();
+            context.tracing().start(new Tracing.StartOptions()
+                    .setScreenshots(true)
+                    .setSnapshots(true));
+            page = context.newPage();
+            logger.info("Playwright initialized successfully.");
+        } catch (Exception e) {
+            logger.error("Error initializing Playwright", e);
+            e.printStackTrace();
+            throw new RuntimeException("Playwright initialization failed", e);
+        }
+
+    }
+
+    @BeforeEach
+    public void setUp(TestInfo testInfo) {
+        logger.info("Initializing Selenium WebDriver...");
+        if (driver != null) {
+            driver.quit();
+        }
+        try {
+            ChromeOptions options = new ChromeOptions();
+//        options.setBrowserVersion("latest");
+            options.setPageLoadStrategy(PageLoadStrategy.EAGER);
+            Duration duration = Duration.of(2, ChronoUnit.SECONDS);
+//        Proxy proxy = new Proxy();
+//        proxy.setHttpProxy("https");
+//        options.setProxy(proxy);
+            options.setScriptTimeout(duration);
+            driver = new ChromeDriver(options);
+            logger.info("Selenium WebDriver started. Window Handle: {}", driver.getWindowHandle());
+            ((JavascriptExecutor) driver).executeScript("window.open();");
+            driver.switchTo().window(new ArrayList<>(driver.getWindowHandles()).get(1));
+//        ((JavascriptExecutor) driver).executeScript("window.open('', '_blank', 'width=800,height=600');");
+            if (!testInfo.getTags().isEmpty()) {
+                MDC.put("testCaseId", testInfo.getTags().iterator().next());
+            } else {
+                MDC.put("testCaseId", "UnknownTestCase");
+            }
+
+//            MDC.put("testCaseId", (String) testInfo.getTags().toArray()[0]);
+        }
+        catch (Exception e){
+            logger.error("Error initializing WebDriver", e);
+            throw new RuntimeException("WebDriver initialization failed", e);
+        }
+    }
+
+    public Page getPage() {
+        return page;
+    }
+
+    public WebDriver getDriver() {
+        return driver;
+    }
+
+    public BrowserContext getContext() {
+        return context;
+    }
+
+    public Browser getBrowser() {
+        return browser;
+    }
+
+    @AfterEach
+    public void afterExecute() {
+        MDC.clear();
+        if (driver != null) {
+            driver.quit();
+            driver = null;
+        }
+    }
+
+    @AfterAll
+    public static void shutDownBrowsers() {
+        logger.info("Web Driver Removed");
+        page.close();
+        context.tracing().stop(new Tracing.StopOptions()
+                .setPath(Paths.get("trace.zip")));
+        context.close();
+        browser.close();
+        playwright.close();
+    }
+
+}

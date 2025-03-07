@@ -5,16 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9934b8fb-719c-4e72-b237-2f62c64857f9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assembly/assembly.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/TestRunner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/Hooks.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/PlaywrightTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/Steps/StepDefinitions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/TestCases.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LOG_DIR_IS_UNDEFINED/test-log.log" beforeDir="false" afterPath="$PROJECT_DIR$/LOG_DIR_IS_UNDEFINED/test-log.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/TestCases.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/TestCasesShould.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/TestCasesShould.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/SeleniumTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/TestRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Selenium-1.0-SNAPSHOT-all.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Selenium-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/Selenium-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/example/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/TestCases.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/TestCasesShould.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/example/TestRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/org/example/TestRunner.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,31 +51,46 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.App.executor": "Run",
     "Application.TestRunner.executor": "Run",
+    "Cucumber Java.Feature: TestCases (1).executor": "Run",
+    "Cucumber Java.Scenario: scenario outline (1).executor": "Run",
+    "Cucumber Java.Scenario: scenario outline (2).executor": "Run",
+    "Cucumber Java.Scenario: scenario outline.executor": "Run",
+    "JUnit.Child.testing.executor": "Run",
+    "JUnit.PlaywrightClass.executor": "Run",
+    "JUnit.PlaywrightClass.testing.executor": "Run",
+    "JUnit.PlaywrightTest.executor": "Run",
+    "JUnit.SeleniumTest.function.executor": "Run",
     "Maven.Selenium [clean].executor": "Run",
     "Maven.Selenium [install].executor": "Run",
     "Maven.Selenium [package].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Eclipse-workspace/Selenium/src/main/resources",
+    "last_opened_file_path": "D:/Eclipse-workspace/1_Selenium/Selenium",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.27701148"
+    "project.structure.side.proportion": "0.27701148",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Eclipse-workspace\Selenium\src\main\resources" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Eclipse-workspace\1_Selenium\Selenium\src\test\resources\Features" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestRunner">
-    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.App" />
+  <component name="RunManager" selected="Application.TestRunner (1)">
+    <configuration name="TestRunner (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.TestRunner" />
       <module name="Selenium" />
       <extension name="coverage">
         <pattern>
@@ -82,7 +107,7 @@
       <module name="Selenium" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.example.*" />
+          <option name="PATTERN" value="org.example.Hooks" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -90,10 +115,71 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Scenario: scenario outline (2)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/TestCases.feature" />
+      <option name="GLUE" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="Selenium" />
+      <option name="NAME_FILTER" value="^scenario outline$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^scenario outline$&quot;" />
+      <shortenClasspath name="NONE" />
+      <option name="SUGGESTED_NAME" value="Scenario: scenario outline" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlaywrightTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Selenium" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.Hooks" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.PlaywrightTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestRunner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Selenium" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.TestRunner" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.TestRunner (1)" />
+      <item itemvalue="Application.TestRunner" />
+      <item itemvalue="Cucumber Java.Scenario: scenario outline (2)" />
+      <item itemvalue="JUnit.PlaywrightTest" />
+      <item itemvalue="JUnit.TestRunner" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.TestRunner (1)" />
+        <item itemvalue="JUnit.TestRunner" />
         <item itemvalue="Application.TestRunner" />
-        <item itemvalue="Application.TestRunner" />
+        <item itemvalue="Cucumber Java.Scenario: scenario outline (2)" />
+        <item itemvalue="JUnit.PlaywrightTest" />
       </list>
     </recent_temporary>
   </component>
