@@ -19,18 +19,19 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class Hooks {
+public class HooksTest {
 
     private static Playwright playwright;
     private static Browser browser;
     private static BrowserContext context;
     private static Page page;
     private static WebDriver driver;
-    private static final Logger logger = LoggerFactory.getLogger(Hooks.class);
+    private static final Logger logger = LoggerFactory.getLogger(HooksTest.class);
+
 
     @BeforeAll
+    @io.cucumber.java.BeforeAll
     public static void initiateBrowsers() {
-
         logger.info("Initializing Playwright...");
         try {
             Map headers = new HashMap();
@@ -85,18 +86,17 @@ public class Hooks {
             }
 
 //            MDC.put("testCaseId", (String) testInfo.getTags().toArray()[0]);
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             logger.error("Error initializing WebDriver", e);
             throw new RuntimeException("WebDriver initialization failed", e);
         }
     }
 
-    public Page getPage() {
+    public static Page getPage() {
         return page;
     }
 
-    public WebDriver getDriver() {
+    public static WebDriver getDriver() {
         return driver;
     }
 
@@ -113,11 +113,12 @@ public class Hooks {
         MDC.clear();
         if (driver != null) {
             driver.quit();
+            logger.info("Quiting Driver!!!");
             driver = null;
         }
     }
 
-    @AfterAll
+    @io.cucumber.java.AfterAll
     public static void shutDownBrowsers() {
         logger.info("Web Driver Removed");
         page.close();
@@ -127,5 +128,4 @@ public class Hooks {
         browser.close();
         playwright.close();
     }
-
 }
