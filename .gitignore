@@ -1,0 +1,13 @@
+# Ignore Maven target folder
+target/
+
+# Ignore Maven build artifacts
+*.log
+*.class
+
+# Ignore IntelliJ IDEA files
+.idea/
+*.iml
+
+# Ignore Cucumber reports
+cucumber-reports/

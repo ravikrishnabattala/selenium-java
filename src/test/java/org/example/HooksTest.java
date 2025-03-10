@@ -1,7 +1,10 @@
 package org.example;
 
 import com.microsoft.playwright.*;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.TestInfo;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
@@ -56,7 +59,6 @@ public class HooksTest {
             e.printStackTrace();
             throw new RuntimeException("Playwright initialization failed", e);
         }
-
     }
 
     @BeforeEach
@@ -79,7 +81,7 @@ public class HooksTest {
             ((JavascriptExecutor) driver).executeScript("window.open();");
             driver.switchTo().window(new ArrayList<>(driver.getWindowHandles()).get(1));
 //        ((JavascriptExecutor) driver).executeScript("window.open('', '_blank', 'width=800,height=600');");
-            if (!testInfo.getTags().isEmpty()) {
+            if (testInfo != null && !testInfo.getTags().isEmpty()) {
                 MDC.put("testCaseId", testInfo.getTags().iterator().next());
             } else {
                 MDC.put("testCaseId", "UnknownTestCase");

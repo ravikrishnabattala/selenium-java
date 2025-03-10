@@ -1,4 +1,4 @@
-Feature: Run testcases of playwright and selenium
+Feature: Run testcases of playwright
 
   Background: background
 

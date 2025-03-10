@@ -1,5 +1,9 @@
 package org.example;
 
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+import io.cucumber.java.en.Given;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -29,7 +33,14 @@ public class SeleniumTest {
         new HooksTest().setUp(testInfo);
     }
 
+    @Before
+    public void setUpDuplicate(Scenario scenario) {
+        TestInfo testInfo = null;
+        new HooksTest().setUp(testInfo);
+    }
+
     @AfterEach
+    @After
     public void allClear(){
         new HooksTest().afterExecute();
     }
@@ -41,6 +52,7 @@ public class SeleniumTest {
 
     @Test
     @Tags(value = {@Tag("1234"), @Tag("5678"), @Tag("9101")})
+    @Given("Run selenium google test case")
     public void function() throws InterruptedException {
         driver = HooksTest.getDriver();
         driver.get("https://www.google.com");
@@ -59,6 +71,7 @@ public class SeleniumTest {
 
     @Test
     @Tags(value = {@Tag("12345"), @Tag("5678"), @Tag("9101")})
+    @Given("Run selenium facebook test case")
     public void function1() throws InterruptedException {
         driver = HooksTest.getDriver();
         driver.get("https://www.facebook.com");
