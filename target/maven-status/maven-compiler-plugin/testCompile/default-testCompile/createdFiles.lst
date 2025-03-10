@@ -1,5 +1,0 @@
-org\example\Steps\StepDefinitions.class
-org\example\SeleniumTest.class
-org\example\HooksTest.class
-org\example\PlaywrightTest.class
-org\example\TestRunner.class
